@@ -9,28 +9,30 @@ Item {
     anchors.fill:parent
     property var settingsModel: [
         {
-            "title": "Maps",
-            "settings": ['Radius',
-                'Outward Bulge',
-                'In Situ BSID',
-                'Surface Damage',
-                'Engineering',
-                'White']
+            "title": "Item1",
+            "settings": [
+                'R',
+                'O',
+                'I',
+                'S',
+                'E',
+                'W'
+            ]
         },
         {
-            "title": "Polar Plot",
+            "title": "Item2",
 
         },
         {
-            "title": "3D Map",
+            "title": "Item3",
 
         },
         {
-            "title": "Units",
+            "title": "Item4",
 
         },
         {
-            "title": "Colour Palette",
+            "title": "Item5",
 
         }
     ]
@@ -91,15 +93,6 @@ Item {
                                     contentItem: Text {
                                         color: "#ffffff"
                                     }
-                                    onClicked:{
-                                        paneSettingsList.shown = !paneSettingsList.shown
-                                        if(textmodel.text == 'Units'){
-                                            // backend.repintar(mainWindow.image.mapa_radio_container.mapaRadioLoader.figure_mapa_radio)
-                                        }else if(textmodel.text == 'Colour Palette'){
-                                            backend.switchPaleta()
-
-                                        }
-                                    }
                                 }
                                 Pane {
                                     id: paneSettingsList
@@ -144,19 +137,6 @@ Item {
                                                 checked: index == 0
                                                 padding: 0
                                                 width: parent.width
-                                                //Component.onCompleted:{
-                                                  //  mainWindow.activeMap = radioMapsText.text
-                                                //}
-                                                onClicked:{
-                                                    mainWindow.activeMap = radioMapsText.text
-                                                    if(mainWindow.activeMap == 'White'){
-                                                        backend.whiteCanvas(true)
-                                                    }else{
-                                                        backend.whiteCanvas(false)
-                                                    }
-                                                    // backend.repintar(figure_mapa_radio)
-                                                    // mapaRadioLoader.active = mainWindow.activeMap == 'Radius' ? mapaRadioLoader.active = true : mapaRadioLoader.active = false
-                                                }
                                             }
                                         }
                                     }
